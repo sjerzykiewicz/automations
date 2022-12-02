@@ -1,5 +1,5 @@
 """
-A Script to organize files in "Downloads" into directories by their type.
+A script to organize files in "Downloads" into directories by their type.
 """
 
 import os
