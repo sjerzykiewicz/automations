@@ -7,22 +7,6 @@ Output with connected people will be in santas_list.txt file.
 import random
 
 
-def main():
-    people = []
-    with open("people.txt") as f:
-        for line in f:
-            people.append(line.strip("\n"))
-
-    result = draw(people)
-    while result == False:
-        result = draw(people)
-
-    with open("santas_list.txt", "w") as f:
-        for k in result:
-            f.write(f"{k} -> {result[k]}\n")
-        f.write("\nHappy Christmas!\n")
-
-
 def draw(people):
     choosen = [False for person in people]
     result = {}
@@ -38,6 +22,22 @@ def draw(people):
         result[person] = people[rand]
 
     return result
+
+
+def main():
+    people = []
+    with open("people.txt") as f:
+        for line in f:
+            people.append(line.strip("\n"))
+
+    result = draw(people)
+    while result == False:
+        result = draw(people)
+
+    with open("santas_list.txt", "w") as f:
+        for k in result:
+            f.write(f"{k} -> {result[k]}\n")
+        f.write("\nHappy Christmas!\n")
 
 
 if __name__ == "__main__":
