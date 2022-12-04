@@ -19,7 +19,7 @@ def main():
 
     with open("santas_list.txt", "w") as f:
         for k in result:
-            f.write(f"{k} : {result[k]}\n")
+            f.write(f"{k} -> {result[k]}\n")
         f.write("\nHappy Christmas!\n")
 
 
